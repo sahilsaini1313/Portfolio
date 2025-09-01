@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
+
+</head>
+<style>
+    .skills {
+        background: var(--secondary-color);
+    }
+
+    .marquee {
+        position: relative;
+        overflow: hidden;
+        padding: 28px 0;
+    }
+
+    .marquee::before,
+    .marquee::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 80px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .marquee::before {
+        left: 0;
+        background: linear-gradient(to right, var(--secondary-color), transparent);
+    }
+
+    .marquee::after {
+        right: 0;
+        background: linear-gradient(to left, var(--secondary-color), transparent);
+    }
+
+    .track {
+        display: flex;
+        gap: 50px;
+        width: max-content;
+        animation: scrollLeft 25s linear infinite;
+    }
+
+    .marquee:hover .track {
+        animation-play-state: paused;
+    }
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 500;
+        width: 110px;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .icon img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    .icon:hover {
+        transform: translateY(-6px) scale(1.05);
+    }
+
+    .contact-form form input,
+    form textarea {
+        width: 100%;
+        padding: 14px;
+        background: var(--secondary-color);
+        color: var(--text-color);
+        border: none;
+        outline: none;
+        font-size: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .contact-form textarea {
+        resize: none;
+        height: 240px;
+    }
+
+    .contact-form .submit {
+        display: inline-block;
+        font-size: 16px;
+        background: var(--main-color);
+        color: var(--text-color);
+        width: 160px;
+        transition: all 0.45s ease;
+    }
+
+    @keyframes scrollLeft {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .track {
+            animation: none;
+        }
+    }
+</style>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">Sai<span>n</span>i</a>
+
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about" class="active">About Me</a></li>
+            <li><a href="index.html">Services</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="index.html">Contact Me</a></li>
+        </ul>
+        <div class="bx bx-menu" id="menu-icon">
+
+        </div>
+    </header>
+
+
+    <section class="home" id="home">
+        <div class="home-text">
+            <div class="slide">
+                <span class="one">Hello</span>
+                <span class="two">I'm</span>
+            </div>
+            <h1>Sahilpreet Singh</h1>
+            <h3>Full Stack <span>Developer.</span></h3>
+            <!-- <p>Web Developer with 1+ years experience that keep customers
+                comeing back for about services makes best effort.
+            </p> -->
+            <div class="button">
+                <a href="Sahilpreet Singh.pdf" target="_blank" class="btn"><span><i
+                            class='bx bxs-download'></i></span>Download My Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="img/Sahilpreet Singh.jpg" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Creative Full Stack Developer!</h4>
+            <p>My name is Sahilpreet Singh, a passionate and dedicated Full Stack Developer currently pursuing a
+                Bachelor of Commerce (Hons.) along with a diploma in Web Development. At just 19 years old, I combine my
+                academic knowledge of business with my technical expertise in programming, giving me a unique edge in
+                building innovative and user-friendly digital solutions. I enjoy working on both the front-end and
+                back-end, turning ideas into functional websites and applications. Alongside my technical journey, I am
+                also focused on personal growth and fitness, actively working to achieve a healthier lifestyle and
+                stronger physique. My ultimate goal is to grow as a versatile professional who can contribute to
+                impactful projects and add value through creativity, efficiency, and problem-solving.</p>
+        </div>
+    </section>
+
+
+    <section class="skills">
+        <div class="main-text">
+            <p>Technical Skills</p>
+            <h2><span>My</span> Skills</h2>
+        </div>
+        <div class="marquee" aria-label="skills carousel">
+            <ul class="track" id="skillsTrack">
+                <li class="icon"><img src="icons/python-svgrepo-com.svg" alt="Python"><span>Python</span></li>
+                <li class="icon"><img src="icons/mysql-opened-svgrepo-com.svg" alt="MySQL"><span>MySQL</span></li>
+                <li class="icon"><img src="icons/javascript-svgrepo-com.svg" alt="JavaScript"><span>JavaScript</span>
+                </li>
+                <li class="icon"><img src="icons/html-5-svgrepo-com.svg" alt="HTML & CSS"><span>HTML & CSS</span></li>
+                <li class="icon"><img src="icons/mongodb-opened-svgrepo-com.svg" alt="MongoDB"><span>MongoDB</span></li>
+                <li class="icon"><img src="icons/php-opened-svgrepo-com.svg" alt="PHP"><span>PHP</span></li>
+                <li class="icon"><img src="icons/node-js-svgrepo-com.svg" alt="Node.js"><span>Node.js</span></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact" style="background: var(--bg-color);">
+        <div class="contact-text">
+            <h2>Contact <span>Me!</span></h2>
+            <h4>If You Have Any Project In Your Mind.</h4>
+            <p>I'm Web Developer - creating bold & brave interface design for comapnies
+                all across the world.
+            </p>
+            <div class="list">
+                <li><a href="#">+91 9818416291</a></li>
+                <li><a href="#">saini.sahilpreet2005@gmail.com</a></li>
+            </div>
+
+            <div class="contact-icons">
+                <a href="https://github.com/sahilsaini1313"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/_saini_cherry/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.linkedin.com/in/sahilpreet-singh-66999033a/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="name" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <input type="" placeholder="Your Mobile Number" required>
+                <textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
+                <input type="submit" value="Send Message" class="submit" required>
+            </form>
+        </div>
+    </section>
+
+    <section class="end" style="background: var(--secondary-color);">
+        <div class="last-text">
+            <p>Copyright &copy; 2025 by Sahilpreet Singh All Rights Reserved</p>
+        </div>
+
+        <div class="top">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
